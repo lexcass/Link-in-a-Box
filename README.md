@@ -1,2 +1,2 @@
 # online-clipboard
-A simple web app that features an online clipboard where users can easily share links and text privately between devices.
+A simple web app using Python 3 and Django that features an online clipboard where users can easily share links and text privately between devices.
