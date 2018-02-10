@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <br>
+  <div class="row">
+    <div class="small-6 small-centered large-8 large-centered columns">
+      {% if confirmed %}
+          <p>{{ message }} Please <a href="{% url 'login' %}">login</a> to your account.</p>
+      {% else %}
+          {{ message }}
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

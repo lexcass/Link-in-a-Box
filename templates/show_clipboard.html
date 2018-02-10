@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <!-- Link in a Box Title -->
+  <div class="row"><h2 id="clipboard-title">{{ request.user.username }}'s Link in a Box</h2></div>
+
+  <!-- Box Contents -->
+  <div class="row">
+    <div class="small-centered large-centered columns">
+      <div id="clipboard-container">
+        <span id="clipboard-content">{{ clipboard.content }}</span>
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <!-- Edit Form -->
+  <div class="row">
+        <div class="small-centered large-centered columns">
+          <form id="clipboard-form" action="" method="POST">
+            {% csrf_token %}
+            {{ form.content.errors }}
+            <label for="content">New Link</label>
+            {{ form.content }}
+            <button type="submit" id="process-button" class="button">Save for later</button>
+          </form>
+        </div>
+      </div>
+  </div>
+{% endblock %}

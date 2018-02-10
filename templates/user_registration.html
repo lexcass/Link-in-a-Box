@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <div class="row">
+    <div class="small-6 small-centered medium-5 medium-centered large-centered large-4 columns">
+      <h4>Sign Up</h4>
+      <div class="row">
+        {% if form.errors %}
+          {% for field in form %}
+            <p class="error">{{ field.errors }}</p>
+          {% endfor %}
+        {% endif %}
+      </div>
+      <div class="row">
+        <div class="small-centered large-centered columns">
+          <form action="{% url 'register' %}" method="POST">
+            {% csrf_token %}
+            <label for="username">Username</label>
+            {{ form.username }}
+            <label for="email">Email</label>
+            {{ form.email }}
+            <label for="password1">Password</label>
+            {{ form.password1 }}
+            <label for="password2">Confirm Password</label>
+            {{ form.password2 }}
+            <button type="submit" class="button">Sign up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

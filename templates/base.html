@@ -1,0 +1,38 @@
+<!DOCTYPE html5>
+
+<head>
+  <meta charset="utf-8"/>
+  <title>Link in a Box</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'stylesheets/screen.css' %}"/>
+  <script src="{% static 'node_modules/foundation-sites/vendor/jquery/dist/jquery.min.js' %}"></script>
+  <script src="{% static 'node_modules/foundation-sites/js/foundation.core.js' %}"></script>
+  <script src="{% static 'scripts/app.js' %}"></script>
+</head>
+
+<body>
+  <div class="top-bar">
+    <div class="top-bar-left"><h4 class="title-text">Link in a Box</h4></div>
+    {% if request.user.is_authenticated %}
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li><a href="{% url 'show_clipboard' %}"><small>My Box</small></a></li>
+          <li><a href="{% url 'help' %}"><small>Help</small></a></li>
+          <li><a href="{% url 'logout' %}"><small>Log out</small></a></li>
+        </ul>
+      </div>
+    {% endif %}
+  </div>
+
+  {% block body %}
+  {% endblock %}
+
+  <br><br><br>
+
+  <!-- Footer -->
+  <div class="row">
+    <div class="small-centered large-centered columns">
+      <span id="footer"><small>&copy; 2017 Alex Cassady</small></span>
+    </div>
+  </div>
+</body>

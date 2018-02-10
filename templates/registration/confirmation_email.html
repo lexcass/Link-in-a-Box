@@ -1,0 +1,10 @@
+{% autoescape off %}
+<h3>Welcome to CopyPaste!</h3>
+
+
+<p>Please visit the link below to activate your account:</p>
+{{ protocol }}://{{ domain }}{% url 'confirm_email' user_id=uid confirmation_code=confirmation_code %}
+
+
+<p>Thanks for using my app and have a wonderful day!</p>
+{% endautoescape %}

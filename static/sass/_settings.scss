@@ -1,0 +1,20 @@
+// Colors
+$ocean-blue: #42b9f4;
+$soft-green: #42f468;
+$hot-red: #ef3232;
+
+
+// Pallette
+$foundation-palette: (
+  primary: $ocean-blue,
+  secondary: #767676,
+  success: $soft-green,
+  warning: #ffae00,
+  alert: #cc4b37,
+);
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+// Top bar
+$topbar-background: $ocean-blue;

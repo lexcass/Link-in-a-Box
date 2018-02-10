@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <div class="row">
+    <div class="small-6 small-centered medium-5 medium-centered large-centered large-4 columns">
+      <h4>Login</h4>
+      <!-- Error Message -->
+      {% if message %}
+        <div class="row">
+          <p class="error">{{ message }}</p>
+        </div>
+      {% endif %}
+
+      <!-- Login Form -->
+      <div class="row">
+        <div class="small-centered large-centered columns">
+          <form name="login" action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            <label for="username">Username</label>
+            {{ form.username }}
+            <label for="password">Password</label>
+            {{ form.password }}
+            <button type="submit" class="button">Login</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Help Links -->
+      <div class="row">
+        <p>Forgot your password? <a href="{% url 'password_reset' %}">Click here</a></p>
+      </div>
+      <div class="row">
+        <p>Don't have an account? <a href="{% url 'register' %}">Register here</a></p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
